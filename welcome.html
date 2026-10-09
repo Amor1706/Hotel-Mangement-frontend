@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azuris Coastal Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="welcome-style.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+       WELCOME SCREEN
+  ============================================================ -->
+    <main class="screen">
+
+        <!-- Back button -->
+        <a href="javascript:history.back()" class="screen__back" aria-label="Go back">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </a>
+
+        <!-- Logo -->
+        <div class="screen__logo-wrap">
+            <img src="Logo/Azuris-Logo.png" alt="Azuris Coastal Hotel" class="screen__logo" />
+        </div>
+
+        <!-- Prompt + actions -->
+        <section class="prompt">
+            <p class="prompt__text">
+                Create an Azuris account or log in to continue your booking and track your stay.
+            </p>
+
+            <div class="prompt__actions">
+                <a href="login.html" class="btn btn--primary">Log In</a>
+                <a href="signup.html" class="btn btn--secondary">Create Account</a>
+            </div>
+
+            <p class="prompt__note">
+                Your account helps us securely manage your booking, reviews, and contributions.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

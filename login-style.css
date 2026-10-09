@@ -1,0 +1,293 @@
+/* ============================================================
+   RESET & TOKENS
+============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --navy: #232a9b;
+    --navy-dark: #1a1f7a;
+    --indigo: #4a4fa8;
+    --lavender: #a9aad6;
+    --border: #8b8fd0;
+    --white: #ffffff;
+    --text-dark: #0d0d1a;
+    --text-soft: rgba(255, 255, 255, 0.9);
+
+    --font-main: "Nunito", "Segoe UI", Arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    background: #e9e9ef;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: var(--font-main);
+    cursor: pointer;
+}
+
+/* ============================================================
+   SCREEN
+============================================================ */
+.screen {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px 33px 40px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg,
+            var(--white) 0%,
+            var(--white) 8%,
+            var(--lavender) 55%,
+            var(--indigo) 100%);
+}
+
+/* ============================================================
+   BACK BUTTON
+============================================================ */
+.screen__back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-left: -10px;
+    color: var(--text-dark);
+    border-radius: 50%;
+}
+
+.screen__back:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   LOGO
+============================================================ */
+.screen__logo-wrap {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.screen__logo {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+}
+
+/* ============================================================
+   FORM FIELDS
+============================================================ */
+.login {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.field__label {
+    display: block;
+    margin: 0 0 3px 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.field__box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 46px;
+    padding: 0 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field__box:focus-within {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(35, 42, 155, 0.2);
+}
+
+.field__icon {
+    flex-shrink: 0;
+}
+
+.field__input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+.field__input::placeholder {
+    color: #7a7a8c;
+}
+
+/* Show / hide password button */
+.field__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--text-dark);
+}
+
+.field__toggle .icon-shown {
+    display: none;
+}
+
+.field__toggle.is-visible .icon-hidden {
+    display: none;
+}
+
+.field__toggle.is-visible .icon-shown {
+    display: block;
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus-visible {
+    outline: 3px solid rgba(35, 42, 155, 0.45);
+    outline-offset: 2px;
+}
+
+.btn--primary {
+    margin-top: 8px;
+    height: 50px;
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(26, 31, 122, 0.4);
+}
+
+.btn--primary:hover {
+    background: var(--navy-dark);
+}
+
+.btn--google {
+    height: 46px;
+    background: var(--white);
+    color: var(--text-dark);
+    border-color: var(--border);
+}
+
+.btn--google:hover {
+    background: #f0f0f8;
+}
+
+/* ============================================================
+   DIVIDER ("or")
+============================================================ */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 30px -33px 30px;
+    /* lines run to the screen edges */
+    font-size: 0.8rem;
+    color: var(--text-dark);
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--text-dark);
+}
+
+.divider::before {
+    margin-left: 10px;
+}
+
+.divider::after {
+    margin-right: 10px;
+}
+
+/* ============================================================
+   FOOTER LINKS
+============================================================ */
+.screen__footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+}
+
+.screen__footer a:hover {
+    color: var(--white);
+}
+
+.screen__footer-link {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   DESKTOP: centered phone-sized card
+============================================================ */
+@media (min-width: 600px) {
+    body {
+        align-items: center;
+        padding: 24px 0;
+    }
+
+    .screen {
+        min-height: 780px;
+        border-radius: 28px;
+        box-shadow: 0 12px 40px rgba(35, 42, 155, 0.25);
+        overflow: hidden;
+    }
+}

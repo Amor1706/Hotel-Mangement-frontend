@@ -1,0 +1,187 @@
+/* ============================================================
+   RESET & TOKENS
+============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --navy: #232a9b;
+    /* primary button */
+    --navy-dark: #1a1f7a;
+    --indigo: #4a4fa8;
+    /* bottom of gradient */
+    --lavender: #a9aad6;
+    /* mid gradient */
+    --white: #ffffff;
+    --text-dark: #0d0d1a;
+    --text-soft: rgba(255, 255, 255, 0.85);
+
+    --font-main: "Nunito", "Segoe UI", Arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    background: #e9e9ef;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================================
+   SCREEN (mobile frame, fills the viewport on phones)
+============================================================ */
+.screen {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px 33px 40px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg,
+            var(--white) 0%,
+            var(--white) 8%,
+            var(--lavender) 55%,
+            var(--indigo) 100%);
+}
+
+/* ============================================================
+   BACK BUTTON
+============================================================ */
+.screen__back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-left: -10px;
+    color: var(--text-dark);
+    border-radius: 50%;
+}
+
+.screen__back:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   LOGO
+============================================================ */
+.screen__logo-wrap {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.screen__logo {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+}
+
+/* ============================================================
+   PROMPT TEXT + BUTTONS
+============================================================ */
+.prompt {
+    margin-top: 76px;
+}
+
+.prompt__text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.55;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.prompt__actions {
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.prompt__note {
+    margin-top: 34px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-soft);
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 11px 16px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--text-dark);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus-visible {
+    outline: 3px solid rgba(35, 42, 155, 0.45);
+    outline-offset: 2px;
+}
+
+.btn--primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.btn--primary:hover {
+    background: var(--navy-dark);
+}
+
+.btn--secondary {
+    background: var(--white);
+    color: var(--text-dark);
+}
+
+.btn--secondary:hover {
+    background: #f0f0f8;
+}
+
+/* ============================================================
+   DESKTOP: show as a centered phone-sized card
+============================================================ */
+@media (min-width: 600px) {
+    body {
+        align-items: center;
+        padding: 24px 0;
+    }
+
+    .screen {
+        min-height: 780px;
+        border-radius: 28px;
+        box-shadow: 0 12px 40px rgba(35, 42, 155, 0.25);
+        overflow: hidden;
+    }
+}
